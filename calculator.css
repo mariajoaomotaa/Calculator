@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url('C:\\Users\\utilizador\\Desktop\\WebDev\\CALCULATOR\\Rubik-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    background-color: #8D0339;
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.result {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 30px;
+    max-width: 300px;
+    width: 100%;
+    text-align: right;
+}
+
+.button {
+    max-width: 300px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+button {
+    color: white;
+    font-size: 30px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border-style: none;
+    cursor: pointer;
+}
+
+.number {
+    background-color: #C93667;
+}
+
+.op {
+    background-color: #FFC64F;
+}
+
+.extra {
+    color:#8D0339;
+    background-color: white;
+}
