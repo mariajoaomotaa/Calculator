@@ -56,3 +56,7 @@ button {
     color:#8D0339;
     background-color: white;
 }
+
+button:hover {
+    opacity: 85%;
+}
