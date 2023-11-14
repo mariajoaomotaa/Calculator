@@ -26,6 +26,11 @@
     text-align: right;
 }
 
+.result .answer {
+    padding-top: 5px;
+    font-size: 25px;
+}
+
 .button {
     max-width: 300px;
     width: 100%;
