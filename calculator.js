@@ -8,12 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
     let evaluate = document.querySelector('#evaluate');
     let currentValue = [''];
 
+    //Botão para apagar
     clear.addEventListener("click", () => {
-        currentValue = [''];
+        currentValue = [' '];
         answer.innerHTML = '0';
         updateDisplay();
     });
 
+    //Botão de simetria
     sim.addEventListener ("click", () => {
         let str = currentValue.join('');
         let currentValueNumber = eval(str);
@@ -22,11 +24,22 @@ document.addEventListener("DOMContentLoaded", function () {
         updateDisplay();
     });
 
+    //Botão de percentagem
     porcent.addEventListener ("click", () => {
-        currentValue = [currentValue+'%'];
-        updateDisplay();
+        try {
+            let currentValueNumeric = eval(currentValue.join(''));
+            let percentValue = currentValueNumeric / 100;
+            currentValue = [percentValue];
+            currentInput.innerHTML = percentValue.toString() + '%';
+            answer.innerHTML = percentValue.toString() + '%';
+        } catch (error) {
+            currentInput.innerHTML = 'Error';
+            answer.innerHTML = '';
+            currentValue = [''];
+        }
     });
 
+    //Botões numéricos e operações
     buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
             if (btn.classList.contains('number') || btn.value === '.') {
@@ -45,10 +58,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    //Mostrar o resultado
     function updateDisplay() {
         currentInput.innerHTML = currentValue.join('');
     }
 
+    //Efetuar os cálculos
     function evaluateExpression() {
         try {
             let result = eval(currentValue.join(''));
